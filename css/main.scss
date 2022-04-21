@@ -1,11 +1,22 @@
-@import "./utils/variables";
-@import "./utils/functions";
-@import "./utils/mixins";
-@import "./vendors/normalize";
-@import "./base/base";
-@import "./components/buttons";
-@import "./layouts/header";
-@import "./layouts/nav";
-@import "./layouts/form";
-@import "./layouts/footer";
-@import "./pages/index";
+@import 
+    "./utils/variables",
+    "./utils/functions",
+    "./utils/mixins";
+
+@import 
+    "./vendors/normalize";
+
+@import 
+    "./base/base";
+
+@import 
+    "./components/buttons";
+
+@import 
+    "./layouts/header",
+    "./layouts/nav",
+    "./layouts/form",
+    "./layouts/footer";
+
+@import 
+    "./pages/index";
