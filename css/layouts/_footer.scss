@@ -1,0 +1,47 @@
+footer{
+    background-color: $color-n7;
+    color:white;
+    .footer__block{
+        width: 90%;
+        margin:auto;
+        @include medium-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    h2{
+        font-style: italic;
+        font-family: 'Shrikhand', cursive;
+        font-weight: 400;
+        margin-top: 2rem;
+        @include large-screen {
+            font-size: x-large;
+        }
+    }
+    .footer__content{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        @include medium-screen {
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+        }
+    }
+    ul{
+        @include large-screen {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+    li{
+        margin-bottom: 1rem;
+        margin-right: 2rem;
+    }
+    i{
+        width: 1rem;
+        margin-right: 0.5rem;
+    }
+}

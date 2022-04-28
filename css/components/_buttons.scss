@@ -1,0 +1,15 @@
+.submit-btn {
+    background: linear-gradient(to bottom right, $color-n2 ,$color-n1)  ;
+    color: white;
+    @include shadow-light;
+    padding: 1rem 1.5rem;
+    border-radius: 1.5rem;
+    margin: 2rem;
+    @include btn-common;
+
+    &:hover{
+        opacity: 0.9;
+        @include shadow-dark;
+     //   box-shadow: 0px 4px 9px $color-n4-dk2; 
+    }
+}

@@ -1,0 +1,212 @@
+.search-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: $color-n5;
+
+    &__bar{
+        width: 100%;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-n4;
+        background: linear-gradient(to top, $color-n4 90%, $color-n4-dk1 100%);
+        &--icone{
+            margin-right: 25px;
+            font-size: 1.3rem;
+        }
+        &--text{
+            background-color:inherit;
+            border:none;
+        }
+    }
+    &__info-submit{
+        margin: 2rem 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        text-align: center;
+        @include medium-screen {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align:left;
+            width: 90%;
+            margin:2rem;  
+        }
+        @include large-screen {
+            flex-direction: row;
+            justify-content: space-around;
+            text-align:center; 
+        }
+        p {
+            margin: 0;
+        }
+
+
+    }
+}
+
+.fonctionnement {
+    width: 90%;
+    margin: 3rem auto;
+    &__ol {
+        @include large-screen {
+            display:flex;
+            justify-content: space-between;
+        }
+    }
+
+}
+
+.fonctionnement__li {
+    counter-increment: list-counter;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    margin: 1.5rem 0 1.5rem 0.8rem;
+    @include large-screen {
+        width: 31%;
+    }
+    
+    
+    &:hover {
+        i {
+            color:$color-n1; 
+        }
+        button{
+            background-color: $color-n1-light;
+            @include shadow-dark;
+        }
+    }
+    button {
+        display:flex;
+        justify-content: flex-start;
+        align-items:center;
+        width: 100%;
+        height: 5rem;
+        border-radius: 1.5rem;
+        font-weight: bold;
+        background-color: $color-n5;
+        padding-right: 1.5rem;
+        @include btn-common;
+        &::before {
+            content: counter(list-counter);
+            font-weight: bold;
+            font-size: smaller;
+            color: white ;
+            background-color: $color-n1;
+            border-radius: 1.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            position: relative; //pour aligner sur le bord du bouton
+            right:1.2rem; //pour aligner sur le bord du bouton
+    }
+    i{
+        color:$color-n4-dk2;
+        margin-right: 2rem;
+        @include transition-std;
+    }
+   
+  }
+} 
+.restaurants-section{
+    background-color: $color-n5;
+    h1 {
+        width: 90%;
+        margin: auto;
+        padding: 3rem 0 1.5rem 0;
+    }
+} 
+.restaurants-block{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    flex-wrap: wrap;
+    @include medium-screen {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1.5rem;
+    }
+    padding-bottom: 3rem;
+
+    article {
+        width: 100%;
+        
+    }
+    
+
+}
+.restaurant{
+    margin-bottom: 1.5rem;
+
+    figure {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 0;
+    }
+    .restaurant__img{
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .restaurant__img-new{
+        color:$color-n6;
+        background-color: $color-n6-light;
+        position:absolute;
+        top:5%;
+        right:5%;
+        border-radius:0.2em;
+        padding:0.5em;
+        font-size: smaller;
+        font-weight: bold;
+    }
+    .restaurant__legend{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        border-radius: 0 0 20px 20px;
+        padding: 1.5rem 2rem 0.5rem 1rem;
+    }
+    .restaurant__description > * {
+        margin: 0 0 0.5rem 0 ;
+    }
+    .restaurant__heart{
+        position: relative;
+    }
+
+    .fa-heart{
+        font-size: 2em;
+    }
+
+    .heart__checkbox{
+        display: none;
+        + .heart__checkbox--checked {
+            cursor: pointer;
+            background:linear-gradient(to top right, $color-n2 ,$color-n1);
+            background-clip: text;
+            color:transparent;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 1;
+            opacity: 0;
+            @include transition-std;
+        }
+        &:checked + .heart__checkbox--checked {
+            opacity: 1;
+            transition: opacity 700ms  50ms;
+        }
+    }
+}
