@@ -604,6 +604,7 @@ footer i {
 
 .restaurant {
   margin-bottom: 1.5rem;
+  position: relative;
 }
 .restaurant figure {
   display: flex;
@@ -639,6 +640,11 @@ footer i {
 }
 .restaurant .restaurant__description > * {
   margin: 0 0 0.5rem 0;
+}
+.restaurant .restaurant_heart-position {
+  position: absolute;
+  bottom: 1.7rem;
+  right: 2rem;
 }
 .restaurant .restaurant__heart {
   position: relative;
