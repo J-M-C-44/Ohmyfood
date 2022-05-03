@@ -844,6 +844,7 @@ footer i {
 @media screen and (min-width: 768px) {
   .menu__title {
     justify-content: space-evenly;
+    margin-top: 1rem;
   }
 }
 
@@ -908,6 +909,10 @@ footer i {
 .menu-choices__item:nth-of-type(3) {
   -webkit-animation-delay: 600ms;
           animation-delay: 600ms;
+}
+.menu-choices__item:nth-of-type(4) {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
 }
 .menu-choices__item:hover .menu-choices__check-icon {
   margin-right: 0;
