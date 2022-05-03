@@ -1,3 +1,4 @@
+/* #region  ------------------------------------------   Boutons  ----------------------------*/
 .submit-btn {
     background: linear-gradient(to bottom right, $color-n2 ,$color-n1)  ;
     color: white;
@@ -13,3 +14,8 @@
      //   box-shadow: 0px 4px 9px $color-n4-dk2; 
     }
 }
+.button-command{
+    display: flex;
+    justify-content: center;
+}
+/* #endregion  ---------------------------------------   Boutons  ----------------------------*/

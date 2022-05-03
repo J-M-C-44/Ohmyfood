@@ -1,12 +1,21 @@
+/* #region  ------------------------------------------   Header  ----------------------------*/
 header{
     display:flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     height: 80px;
-
+    position:relative;
     .header__logo{
         height: 50%;
     }
+    // flèches de retour vers l'accueil sur les pages restaurants
+    .header__arrow{
+        position: absolute;
+        top: 1.5rem;
+        left: 2%;
+        font-size: 1.7rem;
+    }
 
 }
-
+/* #endregion  ---------------------------------------   Header  ----------------------------*/

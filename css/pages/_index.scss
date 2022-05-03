@@ -1,11 +1,13 @@
+/* #region  --------------------------------------   page Index (Accueil)  ----------------------------*/
+
+// partie recherche / localisation
 .search-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex-column-jcenter;
     align-items: center;
     flex-wrap: wrap;
     background-color: $color-n5;
 
+    // "barre" de recherche
     &__bar{
         width: 100%;
         height: 3rem;
@@ -23,13 +25,13 @@
             border:none;
         }
     }
+      // informations sur la société + bouton explorer
     &__info-submit{
         margin: 2rem 10%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flex-column-jcenter;
         align-items:center;
         text-align: center;
+        // responsive
         @include medium-screen {
             flex-direction: row;
             justify-content: space-between;
@@ -45,34 +47,32 @@
         p {
             margin: 0;
         }
-
-
     }
 }
 
+// partie fonctionnement par étapes
 .fonctionnement {
     width: 90%;
     margin: 3rem auto;
     &__ol {
+        // responsive
         @include large-screen {
             display:flex;
             justify-content: space-between;
         }
     }
-
 }
 
+// liste des étapes affichées sous formes de boutons avec le N° d'étape intégré au bord gauche
 .fonctionnement__li {
     counter-increment: list-counter;
-    display:flex;
-    flex-direction: column;
+    @include flex-column;
     align-items:center;
     margin: 1.5rem 0 1.5rem 0.8rem;
+    // responsive
     @include large-screen {
         width: 31%;
     }
-    
-    
     &:hover {
         i {
             color:$color-n1; 
@@ -93,6 +93,7 @@
         background-color: $color-n5;
         padding-right: 1.5rem;
         @include btn-common;
+        // ajout du n° d'étape sur le bord gauche du bouton
         &::before {
             content: counter(list-counter);
             font-weight: bold;
@@ -113,9 +114,9 @@
         margin-right: 2rem;
         @include transition-std;
     }
-   
   }
 } 
+// partie listant les restaurants
 .restaurants-section{
     background-color: $color-n5;
     h1 {
@@ -127,31 +128,27 @@
 .restaurants-block{
     width: 90%;
     margin: auto;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     align-items:center;
     flex-wrap: wrap;
+    padding-bottom: 3rem;
+    //responsive
     @include medium-screen {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 1.5rem;
     }
-    padding-bottom: 3rem;
-
     article {
-        width: 100%;
-        
+        width: 100%;       
     }
-    
-
 }
+// les cartes Restaurant
 .restaurant{
     margin-bottom: 1.5rem;
     position:relative;
 
     figure {
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         position: relative;
         margin: 0;
     }
@@ -161,12 +158,13 @@
         object-fit: cover;
         border-radius: 20px 20px 0px 0px;
     }
+    // tag "nouveau" mis en haut à droite de l'image
     .restaurant__img-new{
-        color:$color-n6;
-        background-color: $color-n6-light;
         position:absolute;
         top:5%;
         right:5%;
+        color:$color-n6;
+        background-color: $color-n6-light;
         border-radius:0.2em;
         padding:0.5em;
         font-size: smaller;
@@ -183,37 +181,17 @@
     .restaurant__description > * {
         margin: 0 0 0.5rem 0 ;
     }
+    // parties gestion du coup de coeur/like
+    // superposition de 2 icones: 1 icone coeur vide surplombée par 1 icone coeur remplie transparente. L'icone remplie devient opaque quand elle est cochée.
     .restaurant__heart-position {
         position: absolute;
         bottom:1.7rem;
         right:2rem;
     }
-
    .restaurant__heart{
-       position: relative;
+       // gestion commune du coup de coeur / like
+        @include heart-common;
    }
     
-    .fa-heart{
-        font-size: 2em;
-    }
-
-    .heart__checkbox{
-        display: none;
-        + .heart__checkbox--checked {
-            cursor: pointer;
-            background:linear-gradient(to top right, $color-n2 ,$color-n1);
-            background-clip: text;
-            color:transparent;
-            position: absolute;
-            top:0;
-            left:0;
-            z-index: 1;
-            opacity: 0;
-            animation: init-anim-moz 1ms; //pour forcer l'init au démarrage sur firefox
-        }
-        &:checked + .heart__checkbox--checked {
-            animation: heart-anim 800ms forwards;
-
-        }
-    }
 }
+/* #endregion  --------------------------------------   page Index (Accueil)  ----------------------------*/

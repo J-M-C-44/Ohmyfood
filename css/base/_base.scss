@@ -1,3 +1,4 @@
+/* #region  ------------------------------------------   Base  ----------------------------*/
 /* ---- box sizing ---- */
 * {
     box-sizing: border-box;
@@ -5,13 +6,16 @@
     font-size: 16px;
 }
 
-body {
+.global-container {
     max-width: map-get($breakpoints, screen-xxl);
-    display: flex;
-    flex-direction: column;
+    margin:auto;
+    @include flex-column;
     flex-wrap: wrap;
+    @include xxlarge-screen {
+        border-right: 1px solid $color-n4;
+        border-left: 1px solid $color-n4;
+    }
 }
-
 main{
     width: 100%;
     margin:auto;
@@ -20,6 +24,9 @@ main{
 h1 {
     font-size: 1.5em;
     font-weight: bolder;
+}
+h3{
+    margin:0;
 } 
 
 ul, ol {
@@ -31,3 +38,16 @@ a {
     text-decoration: none;
     color: inherit;
 }
+fieldset{
+    border: none;
+    margin:0;
+    padding:0;
+    min-inline-size:0;
+    @include xlarge-screen {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1.5rem;
+    }
+ 
+}
+/* #endregion  ---------------------------------------   Base  ----------------------------*/

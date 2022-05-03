@@ -1,3 +1,14 @@
+/* #region  ------------------------------------------   Mixins  ----------------------------*/
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-column-jcenter {
+    @include flex-column;
+    justify-content:center;
+}    
+// gestion des différentes ombres
 @mixin shadow-light {
     box-shadow: 0px 4px 9px $color-n4-dk1;
 }
@@ -6,15 +17,59 @@
 }
 
 @mixin transition-std {
-    transition: all 250ms 100ms;
+    transition: all 250ms 100ms ease-in-out;
 }
+// partie commune entre les boutons type submit (explorer, commanader) et boutons fonctionnements
 @mixin btn-common {
     cursor: pointer;
     border:none;
     @include transition-std;
 }
 
-//mediaqueries
+// gestion commune du coup de coeur / like
+@mixin heart-common {
+    position: relative;
+    .fa-heart{
+        font-size: 2em;
+    }
+    .heart__checkbox{
+        // checkbox cachée
+        display: none;
+        // icone "remplie" transparente qui devient visible quand elle est "cochée"
+        + .heart__checkbox--checked {
+            cursor: pointer;
+            background:linear-gradient(to top right, $color-n2 ,$color-n1);
+            background-clip: text; // pour voir le background "à travers" l'icone et représenter un coeur rempli
+            color:transparent;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index: 1;
+            opacity: 0; // icone rempli non visible par défaut
+            animation: init-anim-moz 10ms; //pour forcer l'init au démarrage sur firefox
+        }
+        //après "cochage" l' icone remplie devient visible 
+        &:checked + .heart__checkbox--checked { 
+            animation: heart-anim 700ms forwards;
+        }    
+    }
+}
+//affichage progressif des plats
+@mixin fade-in{
+    animation: fade-in-anim 1000ms both ;
+    @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: 200ms * $i;
+        }
+    } 
+}
+
+//mediaqueries s'appuyant sur la map de breakpoints
+@mixin xsmall-screen {
+    @media screen and (min-width: map-get($breakpoints, screen-xs)) { 
+        @content;
+    }
+}
 @mixin small-screen {
     @media screen and (min-width: map-get($breakpoints, screen-s)) { 
         @content;
@@ -30,8 +85,14 @@
         @content;
     }
 }
+@mixin xlarge-screen {
+    @media screen and (min-width: map-get($breakpoints, screen-xl)) { 
+        @content;
+    }
+}
 @mixin xxlarge-screen {
     @media screen and (min-width: map-get($breakpoints, screen-xxl)) { 
         @content;
     }
 }
+/* #endregion  ---------------------------------------   Mixins ----------------------------*/

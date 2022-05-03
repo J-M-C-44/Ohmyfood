@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="Author" content="Jean-Michel Cozic" />
+        <meta name="description" content="Ohmyfood : Réservez le menu qui vous convient - Page La palette du goût - mobile first">
+        <script src="https://kit.fontawesome.com/2e246b6860.js" crossorigin="anonymous"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+        </style>
+        <link rel="stylesheet" href="css/main.css" />
+
+        <title> Projet3 - animation CSS - Ohmyfood - page "La palette du goût" </title>
+    </head>
+
+    <body>
+
+        <!-- conteneur global pour mise en forme -->
+        <div class="global-container"> 
+
+            <!--=============================================================================================================================================-->
+            <!--                                                            En-tête de la page  (header)                                                     -->
+            <!--=============================================================================================================================================-->
+            
+            <header>              
+                <a href="./index.html" title="retour vers l'accueil">
+                    <i class="fa-solid  fa-arrow-left  header__arrow"> </i>    
+                </a>
+                <img class="header__logo" src="images/logo/ohmyfood@2x.svg" alt="Logo ohmyfood">            
+            </header>
+
+            <!--=============================================================================================================================================-->
+            <!--                                                               Corps principal de la page  (main)                                            -->
+            <!--=============================================================================================================================================-->
+            
+            <main>
+
+                <!--=========================================================    Bannière   ================================================================-->
+                <img class="banner__img" src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="présentation d'un plat de La palette du goût">
+
+                <!--=================================================  section de présentation et sélection du menu   ======================================-->
+                <section class="menu-section">
+                
+                    <!-- barre de titre du restaurant (nom + icone coeur/like) -->
+                    <div class="menu__title">
+                        <h1> La palette du goût</h1>
+                        <div class="menu__heart"> 
+                            <!-- checkbox qui sera cachée au profit du label clickable sous forme d'icone (2 icones pour la transition)  -->                                         
+                            <i class="fa-regular  fa-heart"></i>
+                            <input type="checkbox" class="heart__checkbox" id="heart__checkbox1">
+                            <label for="heart__checkbox1" class="heart__checkbox--checked">
+                                <i class="fa-solid  fa-heart"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                     <!-- la carte pour composition du menu personnalisé, en 3 parties: entrées, plats, desserts  -->
+                    <form method="post" class="menu__form"> 
+                        <div class="menu-choices">
+
+                            <!-- partie 1 : choix des entrées, en 2 parties: titre + 3 plats -->
+                            <fieldset>
+                                <legend>
+                                    <h2>Entrées </h2>
+                                </legend>
+
+                                <!-- entrée n°1 -->
+                                <div class="menu-choices__item">
+                                <!-- controle w3c : pas droit aux div dans un label... : remplacement label par div
+                                <label class="menu-choices__item  menu__checkbox--checked" for="starter-1">
+                                    <input type="checkbox" id="starter-1" class="menu-choices__checkbox" >         -->
+                                    <!-- nom du plat -->
+                                    <div class="menu-choices__course">
+                                        <h3 class="course__principal"> Fricassée d'escargot </h3>                        
+                                        <p class="course__aside"> Au piment d'Espelette </p>
+                                    </div>
+                                    <div class="menu-choices__price-check">
+                                        <!-- prix du plat -->
+                                        <span class="menu-choices__price">
+                                            25€
+                                        </span>
+                                        <!-- icone type checkbox qui apparait uniquement à la selection du plat-->
+                                        <span class="menu-choices__check-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </div>	
+                                </div>
+
+                                <!-- entrée n°2 -->
+                                <div class="menu-choices__item">
+                                    <!-- nom du plat -->
+                                    <div class="menu-choices__course">
+                                        <h3 class="course__principal"> Foie gras de canard mi-cuit </h3>                        
+                                        <p class="course__aside"> Et ses copeaux de truffe noire </p>
+                                    </div>
+                                    <div class="menu-choices__price-check">
+                                        <!-- prix du plat -->
+                                        <span class="menu-choices__price">
+                                            35€
+                                        </span>
+                                        <!-- icone type checkbox qui apparait uniquement à la selection du plat-->
+                                        <span class="menu-choices__check-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- entrée n°3 -->
+                                <div class="menu-choices__item">
+                                    <div class="menu-choices__course">
+                                        <h3 class="course__principal"> Oeuf au plat </h3>                        
+                                        <p class="course__aside"> Assaisonné à la truffe sur lit de caviar </p>
+                                    </div>
+                                    <div class="menu-choices__price-check">
+                                        <span class="menu-choices__price">
+                                            20€
+                                        </span>
+                                        <!-- icone type checkbox qui apparait uniquement à la selection du plat-->
+                                        <span class="menu-choices__check-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <!-- partie 2 : choix du plat principal (3) -->
+                            <fieldset>
+                                <legend>
+                                    <h2> Plats </h2>
+                                </legend>
+
+                                <!-- plat n°1 -->
+                                <div class="menu-choices__item">
+                                    <!-- nom du plat -->
+                                    <div class="menu-choices__course">
+                                        <h3 class="course__principal"> Filet de boeuf aux herbes </h3>                        
+                                        <p class="course__aside"> Accompagné de sa ribambelle de légumes </p>
+                                    </div>
+                                    <div class="menu-choices__price-check">
+                                        <!-- prix du plat -->
+                                        <span class="menu-choices__price">
+                                            40€
+                                        </span>
+                                        <!-- icone type checkbox qui apparait uniquement à la selection du plat-->
+                                        <span class="menu-choices__check-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </div>	
+                                </div>
+
+                                <!-- plat n°2 -->
+                                <div class="menu-choices__item">
+                                    <!-- nom du plat -->
+                                    <div class="menu-choices__course">
+                                        <h3 class="course__principal"> Parmentier de queue de boeuf </h3>                        
+                                        <p class="course__aside"> À la truffe noire sur sa purée de panais </p>
+                                    </div>
+                                    <div class="menu-choices__price-check">
+                                        <!-- prix du plat -->
+                                        <span class="menu-choices__price">
+                                            35€
+                                        </span>
+                                        <!-- icone type checkbox qui apparait uniquement à la selection du plat-->
+                                        <span class="menu-choices__check-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                 <!-- plat n°3 -->
+                                <div class="menu-choices__item">
+                                    <!-- nom du plat -->								
+                                    <div class="menu-choices__course">
+                                        <h3 class="course__principal"> Filet de turbot </h3>                        
+                                        <p class="course__aside"> Aux agrumes </p>
+                                    </div>
+                                    <div class="menu-choices__price-check">
+                                        <!-- prix du plat -->
+                                        <span class="menu-choices__price">
+                                            44€
+                                        </span>
+                                        <!-- icone type checkbox qui apparait uniquement à la selection du plat-->
+                                        <span class="menu-choices__check-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <!-- partie 3 : choix du dessert (3)  -->
+                            <fieldset>
+                                <legend>
+                                    <h2> Desserts </h2>
+                                </legend>
+
+                                <!-- dessert n°1 -->
+                                <div class="menu-choices__item">
+                                    <!-- nom du plat -->	
+                                    <div class="menu-choices__course">
+                                        <h3 class="course__principal"> Paris-Brest </h3>                        
+                                        <p class="course__aside"> Revisité </p>
+                                    </div>
+                                    <div class="menu-choices__price-check">
+                                        <!-- prix du plat -->
+                                        <span class="menu-choices__price">
+                                            18€
+                                        </span>
+                                        <!-- icone type checkbox qui apparait uniquement à la selection du plat-->
+                                        <span class="menu-choices__check-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </div>	
+                                </div>
+                                
+                                <!-- dessert n°2 -->
+                                <div class="menu-choices__item">
+                                    <!-- nom du plat -->	
+                                    <div class="menu-choices__course">
+                                        <h3 class="course__principal"> Macaron au chocolat d'exception </h3>                        
+                                        <p class="course__aside"> Et glace à la vanille de Madagascar </p>
+                                    </div>
+                                    <div class="menu-choices__price-check">
+                                        <!-- prix du plat -->
+                                        <span class="menu-choices__price">
+                                            22€
+                                        </span>
+                                        <!-- icone type checkbox qui apparait uniquement à la selection du plat-->
+                                        <span class="menu-choices__check-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- dessert n°3 -->
+                                <div class="menu-choices__item">
+                                    <!-- nom du plat -->	
+                                    <div class="menu-choices__course">
+                                        <h3 class="course__principal"> Mousse au chocolat </h3>                        
+                                        <p class="course__aside"> Au piment d'Espelette et à la truffe noire </p>
+                                    </div>
+                                    <div class="menu-choices__price-check">
+                                        <!-- prix du plat -->
+                                        <span class="menu-choices__price">
+                                            23€
+                                        </span>
+                                        <!-- icone type checkbox qui apparait uniquement à la selection du plat-->
+                                        <span class="menu-choices__check-icon">
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <!-- le bouton pour passer la commande -->
+                        <div class="button  button-command">
+                            <button type="submit" value="command" class="submit-btn">
+                                Commander
+                            </button>
+                        </div>
+                    </form>  
+        
+                </section>
+            
+            </main>
+
+            <!--=============================================================================================================================================-->
+            <!--                                                               Pied de la page  (footer)                                                     -->
+            <!--=============================================================================================================================================-->
+            <footer>
+
+                <div class="footer__block">
+                
+                    <!-- logo -->
+                    <h2 class="italic"> ohmyfood</h2>
+
+                    <!-- liste des différents liens -->
+                    <div class="footer__content"> 
+                        <ul>
+                            <li> 
+                                <a href="#">
+                                    <i class="fas fa-utensils"></i>
+                                    <span> Proposer un restaurant </span>
+                                </a>
+                            </li>
+                            <li> 
+                                <a href="#">
+                                    <i class="fa-solid fa-handshake-angle"></i>
+                                    <span> Devenir partenaire </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li> 
+                                <a href="#"> Mentions légales </a>
+                            </li>
+                            <li> 
+                                <a href="mailto:contact-client@ohmyfood.com"> Contact </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+
+            
+        </div>       
+    </body>
+</html>

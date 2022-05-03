@@ -1,0 +1,134 @@
+/* #region  ----------------------------------------    pages Restaurant  ----------------------------*/
+
+//bannière image qui est légèrement recouverte par la partie menu
+.banner__img{
+    width: 100%;
+    height:250px;
+    object-fit: cover;
+    z-index: -1;
+}
+.menu-section{
+    width: 100%;
+    margin-top: -3rem;
+    z-index: 1;
+    position: relative;
+    padding: 1.5rem 5%;
+    background-color:$color-n4;
+    border-radius: 20px 20px 0px 0px; 
+}
+
+.menu__title{
+    display: flex;
+    justify-content: space-between;
+    h1{
+        font-family: 'Shrikhand', cursive;
+        font-size: xx-large;
+        margin-top: 0;
+    }
+    // responsive
+    @include medium-screen {
+        justify-content: space-evenly;
+    }
+}
+.menu__heart{
+    // gestion du coup de coeur / like
+    @include heart-common;
+}  
+
+.menu-choices {
+    // titres: Entrées, Plats et Desserts
+    legend{
+        text-transform: uppercase;
+        &::after {
+            content: "";
+            display: block;
+            border-bottom: 3px solid $color-n3;
+            width: 50%;
+        }    
+    }
+    // les boites des différents plats
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        border-radius: 1rem;
+        @include shadow-light;
+        margin: 1em 0;
+        width: 100%;
+        cursor: pointer;
+        // pour cacher icone checkbox à droite
+        overflow: hidden; 
+
+        //animation : affichage progressif des plats
+        @include fade-in;
+
+        //animation: au survol du plat, affichage par la droite de l icone checkbox en la faisant tourner
+        &:hover {
+            .menu-choices__check-icon {
+               margin-right: 0;                 
+            }
+            .fa-check-circle{
+                animation: rotation-anim 500ms;
+            }
+        }
+        // responsive
+        @include medium-screen {
+            width:90%;
+            margin-left:10%;
+        }
+        @include xlarge-screen {
+            width:100%;
+            margin-left:0;
+        }
+    } 
+    &__course{
+        @include flex-column;
+        padding: 0.5rem 1rem;
+        overflow: hidden;
+        .course__principal, .course__aside{
+            margin:0.2rem 0;
+            //gestion de la partie prix qui peut venir déborder sur le nom du plat
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+        .course__aside {
+            font-size: small;
+            // responsive
+            @include medium-screen {
+                padding-left:5rem;
+            }
+            @include xlarge-screen {
+                padding-left:0;
+            }
+          }   
+    }
+    &__price-check{
+        display: flex;
+    } 
+    &__price{
+        @include flex-column;
+        justify-content: flex-end;
+        font-weight: bold;
+        margin: 0 2rem 0.7rem 0;
+    }
+    // icone checkbox dépassant à droite (dépassement non visible) 
+    &__check-icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-n3;
+        color:white;
+        font-size: larger;
+        width: 4rem;
+        border-radius:0 1rem 1rem 0;
+        margin-right: -4.5rem;
+        transition: all 500ms;
+    }
+    .fa-check-circle{
+        font-size: larger;
+        transform:rotate(0);
+    }
+
+} 
+/* #endregion  ----------------------------------------    pages Restaurant  ----------------------------*/

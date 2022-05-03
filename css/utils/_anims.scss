@@ -1,3 +1,5 @@
+/* #region  ------------------------------------------   Animations  ----------------------------*/
+// remplissage progressif du coeur
 @keyframes heart-anim{
     0%{
         opacity: 0;
@@ -12,7 +14,7 @@
         transform:scale(1.05);
     }
 }
-// pour pallier au pb d'initialisation sur firefox (sinon gère mal le 1er click)
+// animation forcée pour pallier au pb d'initialisation sur firefox (sinon gère mal le 1er click)
 @keyframes init-anim-moz{
     0%{
         opacity: 0;
@@ -21,3 +23,29 @@
         opacity: 0;
     }
 }
+// rotation de l'icone checkbox
+@keyframes rotation-anim{
+    0%{
+        transform:rotate(0deg);
+        
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+// apparition progressive des plats
+@keyframes fade-in-anim{
+    0%{
+        opacity: 0;
+        transform:translateY(1rem);
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        transform:translateY(0);
+    }
+}
+/* #endregion  ---------------------------------------   Animations ----------------------------*/
