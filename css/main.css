@@ -484,13 +484,6 @@ fieldset {
   padding: 0;
   min-inline-size: 0;
 }
-@media screen and (min-width: 1200px) {
-  fieldset {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 1.5rem;
-  }
-}
 
 /* #endregion  ---------------------------------------   Base  ----------------------------*/
 /* #region  ------------------------------------------   Boutons  ----------------------------*/
@@ -876,6 +869,13 @@ footer i {
           animation: heart-anim 700ms forwards;
 }
 
+@media screen and (min-width: 1200px) {
+  .menu-choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1.5rem;
+  }
+}
 .menu-choices legend {
   text-transform: uppercase;
 }

@@ -36,8 +36,14 @@
     @include heart-common;
 }  
 
+// titres: Entrées, Plats et Desserts
 .menu-choices {
-    // titres: Entrées, Plats et Desserts
+    // responsive
+    @include xlarge-screen {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1.5rem;
+    }
     legend{
         text-transform: uppercase;
         &::after {
