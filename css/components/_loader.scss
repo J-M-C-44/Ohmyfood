@@ -1,0 +1,81 @@
+/* #region  ------------------------------------------   Loaders  ----------------------------*/
+
+//loader 1: "conteneur" qui gère le zoom et le déplacement de la boite contenant "Ohmyfood", la boite ohmyfood tournant sur elle-même (animation flip)
+.loader1{
+    @include flex-column-jcenter;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    opacity:1;
+    background-color: white;
+    z-index: 99;
+    animation: loader1 3000ms 500ms linear forwards;
+    &__flip{
+        backface-visibility: visible;
+        font-style: italic;
+        font-family: 'Shrikhand', cursive;
+        font-weight: 400;
+        font-size: 0.3rem;
+        // responsive
+        @include xsmall-screen {
+            font-size: 0.4rem;
+        }
+        @include small-screen {
+            font-size: 0.6rem;
+        }
+        @include medium-screen {
+            font-size: 0.8rem;
+        }
+        @include large-screen {
+            font-size: 1rem;
+        }
+        @include xlarge-screen {
+            font-size: 1.2rem;
+        }
+        opacity: 0;
+        animation: flip 2000ms 100ms forwards;
+        
+    }
+}
+//loader 2: conteneur qui gère l'apparition des bulles, les bulles sont animées (animation slide)
+.loader2{
+    @include flex-column;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 20%;
+    opacity:1;
+    background-color:transparent;
+    z-index: 100;
+    animation: loader2 3000ms ease-in-out forwards;
+
+    &__box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+//        position: fixed;
+        opacity:1;
+        background-color:transparent;
+        z-index: inherit;
+    
+        &--circle{
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            background:linear-gradient(to bottom right, $color-n2 ,$color-n1);
+            border-radius: 50%;
+            animation: slide 1000ms 3 ;
+            margin-right:1rem;
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i}) {
+                    animation-delay: 100ms * $i;
+                }
+             }
+       }  
+    }
+}
+
+/* #endregion  ---------------------------------------   Loaders  ----------------------------*/

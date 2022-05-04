@@ -46,7 +46,7 @@
             left:0;
             z-index: 1;
             opacity: 0; // icone rempli non visible par défaut
-            animation: init-anim-moz 10ms; //pour forcer l'init au démarrage sur firefox
+            animation: init-anim-moz 500ms; //pour forcer l'init au démarrage sur firefox
         }
         //après "cochage" l' icone remplie devient visible 
         &:checked + .heart__checkbox--checked { 
