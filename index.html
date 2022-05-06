@@ -10,9 +10,12 @@
             @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
         </style>
         <link rel="stylesheet" href="css/main.css" />
+        <link rel="shortcut icon" type="image/svg+xml" href="images/logo/ohmyfood-icone.svg">
 
         <title>Projet3 - animation CSS - Ohmyfood - page d'accueil</title>
     </head>
+
+    <!--=====================================================================================================================================================-->
 
     <body>
 
@@ -48,12 +51,12 @@
                 <!--=====================================================  section de recherche et informations  ============================================-->
                 <section class="search-section">
                     
-                    <!-- partie recherche --> 
+                    <!--=====================  partie recherche ======================--> 
                     <form method="post" class="search-form">
                         <!-- barre de recherche contentant une icone et la destination--> 
                         <div class="search-form__bar">
                             <label  for="destination"> <i class="fa-solid fa-location-dot search-form__bar--icone "></i> </label>                  
-                            <input  type="search" name="destination" id="destination" class="search-form__bar--text" value="Paris, Belleville" /> 
+                            <input  type="search" name="destination" id="destination" class="search-form__bar--text" value="Paris, Belleville" aria-label="destination:"/> 
                         </div>
                         <!-- informations -->
                         <div class="search-form__info-submit">
@@ -68,7 +71,7 @@
                         </div>
                     </form>
                 
-                    <!-- partie description du fonctionnement --> 
+                    <!--===========  partie description du fonctionnement  ===========--> 
                     <aside class="fonctionnement">
 
                         <h1> Fonctionnement </h1>
@@ -102,7 +105,7 @@
                     <!-- Titre -->
                     <h1> Restaurants</h1>
 
-                    <!-- bloc de 4 cartes restaurant contenant une image avec legende et un "coup de coeur" -->
+                    <!--=== bloc de 4 cartes restaurant contenant une image avec legende et un "coup de coeur" ===-->
                     <div class="restaurants-block">
 
                         <!-- restaurant n°1 -->
@@ -238,7 +241,7 @@
                     <div class="footer__content"> 
                         <ul>
                             <li> 
-                                <a href="#" title="Nous proposer un nouveau restaurant""">
+                                <a href="#" title="Nous proposer un nouveau restaurant">
                                     <i class="fas fa-utensils"></i>
                                     <span> Proposer un restaurant </span>
                                 </a>

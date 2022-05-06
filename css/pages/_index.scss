@@ -17,12 +17,14 @@
         background-color: $color-n4;
         background: linear-gradient(to top, $color-n4 90%, $color-n4-dk1 100%);
         &--icone{
-            margin-right: 25px;
+            margin-right: 1.7rem;
             font-size: 1.3rem;
         }
         &--text{
             background-color:inherit;
             border:none;
+            width: 10rem;
+            font-weight: bold;
         }
     }
       // informations sur la société + bouton explorer

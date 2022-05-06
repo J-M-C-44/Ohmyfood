@@ -915,12 +915,14 @@ footer i {
   background: linear-gradient(to top, #eaeaea 90%, #d1d1d1 100%);
 }
 .search-form__bar--icone {
-  margin-right: 25px;
+  margin-right: 1.7rem;
   font-size: 1.3rem;
 }
 .search-form__bar--text {
   background-color: inherit;
   border: none;
+  width: 10rem;
+  font-weight: bold;
 }
 .search-form__info-submit {
   margin: 2rem 10%;
