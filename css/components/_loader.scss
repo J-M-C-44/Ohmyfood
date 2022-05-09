@@ -34,6 +34,7 @@
             font-size: 1.2rem;
         }
         opacity: 0;
+        transform: perspective(400px);
         animation: flip 2000ms 100ms forwards;
         
     }
@@ -51,12 +52,10 @@
     background-color:transparent;
     z-index: 100;
     animation: loader2 3000ms ease-in-out forwards;
-
     &__box{
         display: flex;
         justify-content: space-between;
         align-items: center;
-//        position: fixed;
         opacity:1;
         background-color:transparent;
         z-index: inherit;
@@ -67,8 +66,8 @@
             height: 2rem;
             background:linear-gradient(to bottom right, $color-n2 ,$color-n1);
             border-radius: 50%;
-            animation: slide 1000ms 3 ;
             margin-right:1rem;
+            animation: slide 1000ms 3 ;
             @for $i from 1 through 5 {
                 &:nth-child(#{$i}) {
                     animation-delay: 100ms * $i;

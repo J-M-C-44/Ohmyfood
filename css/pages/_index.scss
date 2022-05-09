@@ -154,14 +154,14 @@
         position: relative;
         margin: 0;
     }
-    .restaurant__img{
+    &__img{
         height: 200px;
         width: 100%;
         object-fit: cover;
         border-radius: 20px 20px 0px 0px;
     }
     // tag "nouveau" mis en haut à droite de l'image
-    .restaurant__img-new{
+    &__img-new{
         position:absolute;
         top:5%;
         right:5%;
@@ -172,7 +172,7 @@
         font-size: smaller;
         font-weight: bold;
     }
-    .restaurant__legend{
+    &__legend{
         display:flex;
         justify-content: space-between;
         align-items: center;
@@ -180,17 +180,17 @@
         border-radius: 0 0 20px 20px;
         padding: 1.5rem 2rem 0.5rem 1rem;
     }
-    .restaurant__description > * {
+    &__description > * {
         margin: 0 0 0.5rem 0 ;
     }
     // parties gestion du coup de coeur/like
     // superposition de 2 icones: 1 icone coeur vide surplombée par 1 icone coeur remplie transparente. L'icone remplie devient opaque quand elle est cochée.
-    .restaurant__heart-position {
+    &__heart-position {
         position: absolute;
         bottom:1.7rem;
         right:2rem;
     }
-   .restaurant__heart{
+   &__heart{
        // gestion commune du coup de coeur / like
         @include heart-common;
    }

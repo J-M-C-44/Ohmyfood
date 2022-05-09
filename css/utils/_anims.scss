@@ -5,14 +5,6 @@
         z-index: 99;
         opacity: 1;
     }
-    80%{
-        opacity: 1;
-        transform:scale(10);
-    }
-    90%{
-        opacity: 1;
-        transform:scale(10);
-    }
     95%{
         opacity: 1;
         transform:scale(10);
@@ -30,39 +22,38 @@
 }
 // 2eme partie du loader1 : fait tourner ohmyfood en "3D" 
 @keyframes flip{
-
     0% {    
         opacity:0;
-        transform: perspective(400px) rotateY(0);
+        transform:rotateY(0);
         animation-timing-function: ease-out;
     }   
     10% {    
             opacity:1;
-            transform: perspective(400px) rotateY(0);
+            transform:rotateY(0);
             animation-timing-function: ease-out;
     }
     45% {   
             opacity:1;
-            transform: perspective(400px) translateZ(150px) rotateY(170deg);
+            transform:translateZ(150px) rotateY(170deg);
             animation-timing-function: ease-out;
     }
     55% {
             opacity:1;
-            transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+            transform:translateZ(150px) rotateY(190deg) scale(1);
             animation-timing-function: ease-in;
     }
     85% {   
             opacity:1;
-            transform: perspective(400px) rotateY(360deg) scale(.95);
+            transform:rotateY(360deg) scale(.95);
             animation-timing-function: ease-in;
     }
     100% {
             opacity:1;
-            transform: perspective(400px) scale(1);
+            transform:scale(1);
             animation-timing-function: ease-in;
     }
-
 } 
+
 //loarder2 : conteneur qui gère l'apparition des bulles
 @keyframes loader2{
     0%{ 

@@ -35,8 +35,8 @@
     .heart__checkbox{
         // checkbox cachée
         display: none;
-        // icone "remplie" transparente qui devient visible quand elle est "cochée"
-        + .heart__checkbox--checked {
+        // icone "remplie" transparente qui devient visible quand la checkbox associée est "cochée"
+        + .heart__checkbox-label {
             cursor: pointer;
             background:linear-gradient(to top right, $color-n2 ,$color-n1);
             background-clip: text; // pour voir le background "à travers" l'icone et représenter un coeur rempli
@@ -49,7 +49,7 @@
             animation: init-anim-moz 500ms; //pour forcer l'init au démarrage sur firefox
         }
         //après "cochage" l' icone remplie devient visible 
-        &:checked + .heart__checkbox--checked { 
+        &:checked + .heart__checkbox-label { 
             animation: heart-anim 700ms forwards;
         }    
     }

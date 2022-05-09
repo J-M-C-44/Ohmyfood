@@ -24,6 +24,7 @@
         font-family: 'Shrikhand', cursive;
         font-size: xx-large;
         margin-top: 0;
+        margin-right: 0.3rem;
     }
     // responsive
     @include medium-screen {
@@ -133,8 +134,7 @@
         transition: all 500ms;
     }
     .fa-check-circle{
-        font-size: larger;
-        transform:rotate(0);
+        font-size: larger;   
     }
 
 } 
